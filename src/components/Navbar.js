@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default function Navbar(props) {
@@ -9,10 +9,10 @@ export default function Navbar(props) {
       
         
     <div className="container-fluid">
-      <a className="nav-link active" style={{color:props.mode=== 'dark'?'white':'black'}} href="#">{props.title}</a>
-      <a className="nav-link active" aria-current="page" href="#">{props.hometxt}</a>
+      <Link className="nav-link active" style={{color:props.mode=== 'dark'?'white':'black'}} to="/">{props.title}</Link>
+      <Link className="nav-link active" aria-current="page" to="/">{props.hometxt}</Link>
       <form className="d-flex" role="search"></form>
-          {/* <Link className="nav-link active" aria-current="page" to="/about">{props.abouttxt}</Link> */}
+          <Link className="nav-link active" aria-current="page" to="/about">{props.abouttxt}</Link>
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">{props.search}</button>

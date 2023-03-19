@@ -2,14 +2,13 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import React, { useState } from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 
@@ -36,24 +35,24 @@ function App() {
   }
   return (
     <>
-    {/* <Router> */}
+    <Router>
 <Navbar title ="Aviraj" abouttxt="about" hometxt="Home" search = "Search" mode={mode} toggleMode={toggleMode}/>
 {/* <Navbar/> */}
 <div className="container my-3">
-        <TextForm heading="Enter the text to analyze " mode={mode} />
-{/* <Routes> */}
+        {/* <TextForm heading="Enter the text to analyze " mode={mode} /> */}
+<Routes>
 {/* /users -----> Component-1
     /users/home ---->----> Component-2*/}
-          {/* <Route exact path="/" element={<TextForm heading="Enter the text to analyze " />} />
-        <Route exact path="/about" element={<About />}> */}
+          <Route exact path="/" element={<TextForm heading="Enter the text to analyze" mode={mode} />} />
+        <Route exact path="/about" element={<About />}>
         {/* <Route path="/" element={<TextForm heading="Enter the text to analyze " />}> */}
           {/* <Route index element={<TextForm heading="Enter the text to analyze " />} /> */}
           {/* <Route path="contact" element={<Contact />} /> */}
           {/* <Route path="*" element={<NoPage />} /> */}
-        {/* </Route>
-      </Routes> */}
+         </Route>
+      </Routes> 
 </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
